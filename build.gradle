@@ -1,0 +1,42 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'edu.nccu.cs'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+
+	implementation 'com.fasterxml.jackson.core:jackson-core:2.13.2'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2'
+	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.2'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.2'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.2'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatypes-collections:2.13.2'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.13.2'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-protobuf:2.13.2'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformats-binary:2.13.2'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
