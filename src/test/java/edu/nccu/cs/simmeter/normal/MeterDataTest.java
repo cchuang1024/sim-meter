@@ -1,10 +1,12 @@
-package edu.nccu.cs.simmeter.domain;
+package edu.nccu.cs.simmeter.normal;
 
 import edu.nccu.cs.simmeter.util.DataConverter;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Slf4j
 public class MeterDataTest {
 
     @Test
@@ -21,6 +23,6 @@ public class MeterDataTest {
                                      .toJson()
                                      .getResult();
 
-        System.out.println(result);
+        log.info("result: {}", result);
     }
 }

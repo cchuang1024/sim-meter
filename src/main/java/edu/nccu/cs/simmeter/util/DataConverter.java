@@ -8,20 +8,19 @@ import lombok.Getter;
 
 public class DataConverter<T> {
 
-    public static synchronized <T> DataConverter from(T target) {
-        return new DataConverter<>(target);
-    }
-
     private final T target;
     private final ObjectMapper mapper;
     private Exception ex;
-
     @Getter
     private String result;
 
     private DataConverter(T target) {
         this.target = target;
         this.mapper = new ObjectMapper();
+    }
+
+    public static synchronized <T> DataConverter from(T target) {
+        return new DataConverter<>(target);
     }
 
     public DataConverter<T> init() {

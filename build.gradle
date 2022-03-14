@@ -20,20 +20,27 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
+
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
 	implementation 'com.fasterxml.jackson.core:jackson-core:2.13.2'
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2'
 	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.2'
-	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.2'
-	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.2'
-	implementation 'com.fasterxml.jackson.datatype:jackson-datatypes-collections:2.13.2'
-	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.13.2'
-	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-protobuf:2.13.2'
-	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformats-binary:2.13.2'
+
+    implementation 'org.bouncycastle:bcprov-jdk15to18:1.70'
+    implementation 'org.bouncycastle:bcprov-ext-jdk15to18:1.70'
+    implementation 'org.bouncycastle:bcutil-jdk15to18:1.70'
 
 }
 

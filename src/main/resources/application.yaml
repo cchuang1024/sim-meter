@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+logging:
+  config: classpath:logback-spring.xml
+
+meter:
+  baseValues:
+    - 1000
+    - 1100
+    - 1200
+    - 1300
+    - 1200
+    - 1100
+    - 1000
