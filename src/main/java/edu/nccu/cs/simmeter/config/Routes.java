@@ -1,6 +1,7 @@
 package edu.nccu.cs.simmeter.config;
 
 import edu.nccu.cs.simmeter.normal.MeterDataHandler;
+import edu.nccu.cs.simmeter.sign.SignedMeterDataHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -17,5 +18,11 @@ public class Routes {
     @Bean
     public RouterFunction<ServerResponse> routeMeterData(MeterDataHandler handler) {
         return RouterFunctions.route(GET("/normal").and(accept(MediaType.APPLICATION_JSON)), handler::getMeterData);
+    }
+
+    @Bean
+    public RouterFunction<ServerResponse> routeSignedMeterData(SignedMeterDataHandler handler) {
+        return RouterFunctions.route(GET("/signed").and(accept(MediaType.APPLICATION_JSON)), handler::getSigned)
+                              .andRoute(GET("/pubKey").and(accept(MediaType.APPLICATION_JSON)), handler::getPubKey);
     }
 }
