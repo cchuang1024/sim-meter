@@ -7,6 +7,7 @@ import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.Security;
 import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 
 import lombok.extern.slf4j.Slf4j;
@@ -56,7 +57,7 @@ public class SignatureUtilTest {
 
         KeyFactory factory = KeyFactory.getInstance("DSA", "BC");
         // PublicKey pubKey2 = factory.generatePublic(new PKCS8EncodedKeySpec(pubImp));
-        PublicKey pubKey2 = factory.generatePublic(new PKCS8EncodedKeySpec(pubImp));
+        PublicKey pubKey2 = factory.generatePublic(new X509EncodedKeySpec(pubImp));
         PrivateKey privKey2 = factory.generatePrivate(new PKCS8EncodedKeySpec(privImp));
         KeyPair keyPair2 = new KeyPair(pubKey2, privKey2);
 

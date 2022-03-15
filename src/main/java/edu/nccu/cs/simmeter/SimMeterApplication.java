@@ -18,7 +18,6 @@ import org.springframework.web.reactive.config.EnableWebFlux;
 public class SimMeterApplication {
 
     public static void main(String[] args) {
-        Security.addProvider(new BouncyCastleProvider());
         SpringApplication.run(SimMeterApplication.class, args);
     }
 
